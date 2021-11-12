@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "c3238393-d4fe-41cb-b715-4f4b81e436d5",
+		"name": "Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New-Store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"JD Shoe Store\",\n    \"timezone\" : \"UTC\",\n    \"created_by\": \"d0e61ee6-300a-45ca-8cfe-addf39ede3fd\",\n    \"telephone\" : \"+233243055700\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root_url}}/store/new-store/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"new-store",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New-operator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Rosemary\",\n    \"last_name\" : \"Geller\",\n    \"email\" : \"rgeller@gmail.com\" ,\n    \"password\" : \"web\",\n    \"telephone\": \"+233243055701\",\n    \"store\" : \"812b2a3f-ef66-4570-99e5-9ee112e8b75b\",\n    \"department\" : \"operations\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root_url}}/store/operator/new-operator/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operator",
+						"new-operator",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\" : \"Gotti\",\n    \"email\" : \"jgottid@gmail.com\" ,\n    \"password\" : \"web\",\n    \"telephone\": \"+233243055702\",\n    \"timezone\" : \"UTC\"\n\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root_url}}/store/customer/register/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"customer",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Conversation Party",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"store\": \"812b2a3f-ef66-4570-99e5-9ee112e8b75b\",\n    \"client\" : \"58250f50-6de9-4b66-b076-b8a2228625aa\",\n    \"operator\" : \"5479f0b9-acb4-4b89-8ee6-4b7524286800\" ,\n    \"status\" : \"pending\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root_url}}/store/operations/conversation/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"conversation",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All conversations Parties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/store/operations/conversation/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"conversation",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Particular Conversation Party Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/store/operations/conversation/{{convo_party_uuid}}/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"conversation",
+						"{{convo_party_uuid}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a particular Conversation Party",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/store/operations/conversation/{{convo_party_uuid}}/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"conversation",
+						"{{convo_party_uuid}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Conversation Party",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/store/operations/conversation/{{convo_party_uuid}}/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"conversation",
+						"{{convo_party_uuid}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Client Chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"conversation_party\": \"0c0f4eb3-4f04-4395-9d62-dee871084037\",\n    \"user\" : \"c24cb66c-fa3b-4811-81a7-a07642a96711\",\n    \"message\" : \"hi, check in on my order\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root_url}}/store/operations/chat/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"chat",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Chats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/store/operations/chat/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"chat",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a particular chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{root_url}}/store/operations/chat/{{chat_uuid}}/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"chat",
+						"{{chat_uuid}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE a particular chat",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"conversation_party\": \"0c0f4eb3-4f04-4395-9d62-dee871084037\",\n    \"user\" : \"c24cb66c-fa3b-4811-81a7-a07642a96711\",\n    \"message\" : \"Hey, Are my requests ready? \"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root_url}}/store/operations/chat/{{chat_uuid}}/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"chat",
+						"{{chat_uuid}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Operator CHAT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"conversation_party\": \"0c0f4eb3-4f04-4395-9d62-dee871084037\",\n    \"operator\" : \"5479f0b9-acb4-4b89-8ee6-4b7524286800\",\n    \"chat\" : \"dd5ac1da-3442-4e47-9cb7-3240635d5bdc\",\n    \"message\" : \"Moment of truth\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{root_url}}/store/operations/chat/respond/",
+					"host": [
+						"{{root_url}}"
+					],
+					"path": [
+						"store",
+						"operations",
+						"chat",
+						"respond",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "root_url",
+			"value": "http://127.0.0.1:8000/v0.5"
+		},
+		{
+			"key": "convo_party_uuid",
+			"value": ""
+		},
+		{
+			"key": "chat_uuid",
+			"value": ""
+		}
+	]
+}
