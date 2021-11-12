@@ -1,5 +1,7 @@
 ## Store Victor
 
+This is me trying to see how we can use a human instead of a bot in the chat 
+
 Major Requirement :
 1. Python 3
 2. SQlite3
